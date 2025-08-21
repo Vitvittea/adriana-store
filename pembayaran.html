@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran - ADRIANA STORE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>ADRIANA STORE</h1>
+    <div class="dropdown">
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menu ▼</button>
+      <div class="dropdown-content">
+        <a href="index.html">Home</a>
+        <a href="rdp.html">List RDP</a>
+        <a href="pembayaran.html">Pembayaran</a>
+        <a href="profile.html">Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Konten -->
+  <div class="container">
+    <div class="card">
+      <h2>Metode Pembayaran</h2>
+
+      <div class="row">
+        <div class="label">Bank</div>
+        <div class="value">SeaBank</div>
+      </div>
+
+      <div class="row">
+        <div class="label">No. Rekening</div>
+        <div class="value" id="rek">12345678</div>
+        <div class="btns">
+          <button class="btn copy copy-btn" data-copy-target="rek">Salin Rekening</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="label">Atas Nama</div>
+        <div class="value">Lina Karlina</div>
+      </div>
+
+      <div class="row">
+        <div class="label">WhatsApp</div>
+        <div class="value" id="wa">083870883885</div>
+        <div class="btns">
+          <button class="btn copy copy-btn" data-copy-target="wa">Salin WA</button>
+          <a class="btn wa" href="https://wa.me/6283870883885" target="_blank" rel="noopener">Chat WA</a>
+        </div>
+      </div>
+
+      <div class="note">
+        Setelah transfer, kirim bukti pembayaran via WhatsApp agar pesanan diproses lebih cepat. Terima kasih! 🙏
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">Founder by Adria</div>
+
+  <script src="main.js"></script>
+</body>
+</html>

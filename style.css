@@ -1,0 +1,217 @@
+/* ====== Global ====== */
+:root{
+  --brand:#2c3e50;
+  --bg: orange;
+  --text:#ffffff;
+  --card:#ffffff;
+  --ink:#2c3e50;
+  --muted:#6b7280;
+  --shadow:0 6px 18px rgba(0,0,0,.2);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ====== Navbar & Dropdown ====== */
+.navbar{
+  background: var(--brand);
+  color:#fff;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.navbar h1{ margin:0; font-size:20px; }
+
+.dropdown{ position:relative; display:inline-block; }
+.dropbtn{
+  background:var(--brand);
+  color:#fff;
+  padding:10px 15px;
+  font-size:14px;
+  border:none;
+  cursor:pointer;
+}
+
+.dropdown-content{
+  position:absolute;
+  right:0;
+  background:#f9f9f9;
+  min-width:160px;
+  box-shadow:0 8px 16px rgba(0,0,0,.2);
+  opacity:0;
+  transform:translateY(-10px);
+  pointer-events:none;
+  transition:all .3s ease;
+  border-radius:5px;
+  z-index:100;
+}
+.dropdown-content a{
+  color:#000;
+  padding:10px 15px;
+  text-decoration:none;
+  display:block;
+}
+.dropdown-content a:hover{ background:#ddd; }
+.dropdown.show .dropdown-content{ opacity:1; transform:translateY(0); pointer-events:auto; }
+
+/* ====== Content Layout ====== */
+.content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+.content h1{ font-size:48px; margin:10px 0; }
+.content h2{ font-size:28px; margin:5px 0; }
+.content img{ width:120px; margin:15px 0; }
+
+/* ====== Centered container ====== */
+.container{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px;
+}
+
+/* ====== Card (pembayaran/profile) ====== */
+.card{
+  background: var(--card);
+  color: var(--ink);
+  width:420px;
+  max-width:92vw;
+  border-radius:10px;
+  box-shadow: var(--shadow);
+  padding:22px;
+  text-align:left;
+}
+.card h2{
+  margin:0 0 14px 0;
+  font-size:22px;
+  text-align:center;
+  color:var(--ink);
+}
+.row{ margin:12px 0; }
+.label{ font-size:12px; color:var(--muted); letter-spacing:.4px; }
+.value{ font-size:16px; font-weight:600; margin-top:2px; }
+
+/* Buttons */
+.btns{ display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+.btn{
+  flex:1;
+  border:none;
+  border-radius:8px;
+  padding:10px 12px;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn.copy{ background:#e5e7eb; color:#111827; }
+.btn.wa{ background:#25D366; color:white; text-decoration:none; text-align:center; }
+
+/* Note box */
+.note{
+  font-size:12px;
+  color:#374151;
+  background:#f9fafb;
+  border:1px dashed #d1d5db;
+  border-radius:8px;
+  padding:10px;
+  margin-top:14px;
+}
+
+/* ====== Spec box (RDP) ====== */
+.spec-box{
+  background:#fff;
+  color:#000;
+  border:1px solid #ccc;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:20px;
+  box-shadow:0 2px 5px rgba(0,0,0,.2);
+  width:300px;
+  text-align:center;
+}
+.spec-box h2{ margin-top:0; color:var(--ink); }
+.price{ font-size:18px; color:#e74c3c; font-weight:bold; }
+.garansi{ color:green; font-weight:bold; }
+.non-garansi{ color:orange; font-weight:bold; }
+
+/* ====== Chips (Profile Admins) ====== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+.chip{
+  background:#f3f4f6;
+  color:#111827;
+  border:1px solid #e5e7eb;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* ====== Footer ====== */
+.footer{
+  font-size:12px;
+  color:#fff;
+  text-align:right;
+  padding:5px 10px;
+  position:fixed;
+  bottom:0;
+  right:0;
+  opacity:.8;
+}
+
+/* ====== Small screens ====== */
+@media (max-width:480px){
+  .content h1{ font-size:38px; }
+  .content h2{ font-size:22px; }
+}
+/* Floating download button (pojok kiri) */
+.floating-download{
+  position: fixed;
+  left: 10px;
+  top: 74px;                 /* muncul tepat di bawah navbar */
+  background: #fff;
+  color: var(--brand);
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: var(--shadow);
+  z-index: 150;
+}
+.floating-download:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Mobile tweak */
+@media (max-width:480px){
+  .floating-download{ top: 68px; font-size: 12px; padding: 7px 10px; }
+}
+/* Override ukuran khusus untuk logo di halaman Home */
+.content .logo{
+  width: 480px;      /* ubah sesuai selera: 240–480px */
+  height: auto;
+  display: block;
+  margin: 12px 0 18px;
+}
+
+/* (opsional) responsif biar enak di mobile & desktop */
+.content .logo{
+  width: clamp(220px, 28vw, 420px);
+}
